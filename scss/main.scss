@@ -1,0 +1,164 @@
+/*-------------------------------------
+<h1>Heading 1 (36px)</h1>
+<h2>Heading 2 (30px)</h2>
+<h3>Heading 3 (24px)</h3>
+<h4>Heading 4 (20px)</h4>
+<h5>Heading 5 (18px)</h5>
+<h6>Heading 6 (16px)</h6>
+
+(10) w3-tiny
+(12) w3-small
+(15) w3-medium
+(18) w3-large
+(24) w3-xlarge
+(36) w3-xxlarge
+(48) w3-xxxlarge
+(64) w3-jumbo
+-------------------------------------*/
+$color1: #D4F7D4;
+$color2: #559E54;
+$color3: #236AB9;
+$color4: #183BF0;
+$color5: #091034;
+
+$fontFamily: Verdana;
+$font-size: 16px;
+$padding: 16px;
+$margin: 16px;
+
+.border-4{
+  border-top: 4px solid transparent !important;
+  border-bottom: 4px solid transparent !important;
+}
+
+.border-color1 {
+  border-top-color: $color1 !important;
+  border-bottom-color: $color1 !important;
+}
+@mixin linearFrontColor{
+   // transition: all 5.0s ease-out;
+    transition-property: color;
+    -webkit-transition-property: color;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+}
+
+@keyframes moveButton {
+  0% { left: -400px; opacity: 0;}
+  100% { left: 0; opacity: 1.0;}
+}
+
+@keyframes textShadows {
+  0% { text-shadow: 0px 0px 0px $color2;}
+  100% { text-shadow: 0px 0px 20px $color5;}
+}
+
+.search-box{
+  width: 250px !important;
+  padding-left: $padding !important;
+  padding-right: $padding !important;
+}
+.search-box-hidden{
+  width: 0;
+}
+
+// @debug blue(#445599);
+// @debug adjust-hue($color4, -180);
+
+.content{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  background-color:  lighten($color4, 40%);  
+  margin-top: 77px;
+}
+
+h1.title{
+    font-weight: bolder;
+    margin: $margin*2 0;
+}
+
+.text-animation{
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.text-animation-1{
+  transition: transform 1s linear 1s;
+  transform: translateX(50%);
+}
+
+.trans-all{
+  transition: all 1.2s;
+}
+.trans-move-off{
+  transform: translateX(100%);
+  opacity: 0;
+}
+.trans-move-left-off{
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.trans-move-on{
+  transform: translateX(0) !important;
+  opacity: 1.0 !important;
+}
+
+.trans-up-off{
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.trans-up-on{
+  transform: translateY(0) !important;
+  opacity: 1.0 !important;
+}
+
+.trans-delay-1{
+  transition-delay: 200ms;
+}
+.trans-delay-2{
+  transition-delay: 400ms;
+}
+.trans-delay-3{
+  transition-delay: 600ms;
+}
+.trans-delay-4{
+  transition-delay: 800ms;
+}
+.trans-delay-5{
+  transition-delay: 1000ms;
+}
+
+@import "navbar";
+@import "selector";
+@import "about-me";
+@import "projects";
+@import "education";
+@import "contact";
+@import "screen";
+@import "side-bar";
+
+* {
+    box-sizing: border-box;
+  }
+html {
+    font-size: $font-size;
+    color: $color1;
+    // background-color: $color5; /* darken() */
+    font-family: $fontFamily;
+    letter-spacing: 1.2px;
+    // scroll-behavior: smooth;
+  }
+  
+body {
+    margin: 0;
+    line-height: 1.5;
+}
+  
+a{
+    text-decoration: none;
+}
+
+

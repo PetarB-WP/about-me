@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" id="html-ID">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <!------------------ Icons ------------------>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/javascript-1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body id="body-ID">
+    <!-- Navbar -->
+    <div id="frameNavBar" class="frame-nav-bar w3-top">
+
+        <!-- Selektor -->
+        <div class="selector mobile-hide" id="selector"></div>
+
+        <div id="navBar" class="nav-bar w3-bar w3-center-align w3-large" style="display:flex;">
+            <!---------------- LOGO ---------------->
+            <!-- <a href="#" class="w3-bar-item w3-button w3-padding-16"><span class="w3-large">
+                    <i class="fab fa-forumbee"></i></span></a> -->
+            <div class="left-links mobile-hide">
+                <!----------- About Me ----------->
+                <a href="#aboutMe" class="w3-bar-item w3-button w3-hover-theme w3-padding-16" data-select="selected"
+                    data-name="about-me">O Meni</a>
+
+                <!----------- Educatios ----------->
+                <a href="#education" class="w3-bar-item w3-button w3-hover-theme w3-padding-16"
+                    data-name="education">Obrazovanje</a>
+
+                <!------------ Projects ------------>
+                <a href="#projects" class="w3-bar-item w3-button w3-hover-theme w3-padding-16"
+                    data-name="projects">Projekti</a>
+
+                <!------------ Contact ------------>
+                <a href="#contact" class="w3-bar-item w3-button w3-hover-theme w3-padding-16"
+                    data-name="contact">Kontakt</a>
+
+                <a href="english.html" class="w3-bar-item w3-button w3-padding-16 w3-right">EN</a>
+            </div>
+            <div class="right-buttons">
+                <!-------------- Open Sidebar Button -------------->
+                <a class="w3-bar-item w3-button w3-right w3-large w3-padding-16 dekstop-hide" href="javascript:void(0)"
+                    onclick="switch_navbar()">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <!-------------- Search form -------------->
+                <div class="search w3-right">
+                    <!-- <form method="" action=""> -->
+                    <!-- Open Button and Search Button -->
+                    <button id="searchButton" onclick="show_search_form()"
+                        class="search-button w3-button w3-padding-16 w3-right" title="Open Search Box">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <!-- Input Filed -->
+                    <input id="searchInput" type="text" class="search-input w3-right search-box-hidden" autofocus
+                        placeholder="Search...">
+                    <!-- Close Button -->
+                    <button id="closeButton" onclick="show_search_form()"
+                        class="close-button w3-button w3-right w3-hide" title="Close Search Box">
+                        <i class="fas fa-angle-double-right"></i>
+                    </button>
+                    <!-- </form> -->
+                </div><!-- search -->
+            </div><!-- right-buttons-->
+        </div><!-- nav-bar -->
+
+        <!--------------- Search form - Mobile version --------------->
+        <div id="searchMobile" class="search-mobile trans-all">
+            <!-- <form method="" action=""> -->
+            <!-- Input Filed -->
+            <input id="searchInput" type="text" class="search-input" autofocus placeholder="Search...">
+            <!-- Search Button -->
+            <button id="seachButton" onclick="run_search_form()" class="search-button w3-button trans-all"
+                title="Serach Search Box">Traži
+            </button>
+            <!-- Close Button -->
+            <button id="closeButton" onclick="show_search_form()" class="close-button w3-button trans-all"
+                title="Close Search Box">
+                <i class="fas fa-times"></i>
+            </button>
+            <!-- </form> -->
+        </div>
+
+        <!--------------- Side bar --------------->
+        <div id="sideBar" class="side-bar trans-all">
+            <!------------------ Close button ------------------>
+            <a href="javascript:void(0)" class="closebtn" onclick="switch_navbar()">&times;</a>
+            <!----------- About Me ----------->
+            <a href="#aboutMe" class="sidebar-link select-sidebar" data-name="about-me">O Meni</a>
+            <!----------- Education ----------->
+            <a href="#education" class="sidebar-link" data-name="education">Obrazovanje</a>
+            <!----------- Projects ----------->
+            <a href="#projects" class="sidebar-link" data-name="projects">Projekti</a>
+            <!----------- Contact ----------->
+            <a href="#contact" class="sidebar-link" data-name="contact">Kontakt</a>
+            <!----------- Language ----------->
+            <a href="english.html" class="sidebar-link">EN</a>
+        </div>
+
+    </div><!-- id="nav-bar" -->
+
+    <div class="content">
+        <div id="aboutMe" class="about-me">
+            <div class="picture trans-all trans-move-left-off">
+                <div class="image-person hightlights1" onclick="change_gray_scale(this)"></div>
+            </div>
+            <div class="description trans-all trans-move-off">
+                <h1 class="title w3-xxxlarge trans-all trans-move-off trans-delay-1">O Meni</h1>
+                <h3 class="trans-all trans-move-off trans-delay-2">Pozdrav !</h3>
+                <ul class="trans-all trans-move-off trans-delay-3">
+                    <li>Moje ime je <strong>Petar Bogić</strong>, živim i radim u Sremskoj Mitrovici</li>
+                    <li>Po struci sam elektroinženjer računarstva i elektrotehnike</li>
+                    <li>Poslednjih godina bavim se razvojem web stranica koristeći dostupne alate za razvoj web-a</li>
+                    <li>U slobodno vreme bavim se popravkama drvenih predmeta, električnih
+                        aparata, muzikom, a često posećujem i Frušku Goru
+                    </li>
+                </ul>
+                <p class="trans-all trans-move-off trans-delay-4">Toliko za sada</p>
+            </div>
+        </div>
+        <div id="education" class="education">
+            <h1 class="title w3-xxxlarge trans-all trans-move-left-off">Obrazovanje</h1>
+            <div class="row row-1">
+                <div class="colon-1 trans-all trans-move-left-off">
+                    <h4>Fakultet</h4>
+                </div>
+                <div class="colon-2 trans-all trans-move-off">
+                    <h3><strong>Fakultet Tehničkih Nauka</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1">Mesto</div>
+                        <div class="text-2">Novi Sad</div>
+                    </div>
+                    <div class="text-row">
+                        <div class="text-1">Smer</div>
+                        <div class="text-2">Računarstvo i elektrotehnika</div>
+                    </div>
+                    <div class="text-row">
+                        <div class="text-1">Završen</div>
+                        <div class="text-2">2012 godine</div>
+                    </div>
+                </div>
+            </div><!-- row-1 -->
+            <div class="row row-2">
+                <div class="colon-1 trans-all trans-move-left-off trans-delay-1">
+                    <h4>Srednja škola</h4>
+                </div>
+                <div class="colon-2 trans-all trans-move-off trans-delay-1">
+                    <h3><strong>Elektrotehnička škola - Nikola Tesla</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1">Mesto</div>
+                        <div class="text-2">Sremska Mitrovica</div>
+                    </div>
+                    <div class="text-row">
+                        <div class="text-1">Smer</div>
+                        <div class="text-2">Automatika - Industrisjka elektronika </div>
+                    </div>
+                    <div class="text-row">
+                        <div class="text-1">Završena</div>
+                        <div class="text-2">2004 godine</div>
+                    </div>
+                </div>
+            </div><!-- row-2 -->
+            <div class="row row-3">
+                <div class="colon-1 trans-all trans-move-left-off trans-delay-2">
+                    <h4>Rad sa računarom</h4>
+                </div>
+                <div class="colon-2 trans-all trans-move-off trans-delay-2">
+                    <h3><strong>Osnovno</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>Word</li>
+                                <li>Exsel</li>
+                                <li>PowerPoint</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><strong>Napredni</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>SketchUp - 3D projektovanje</li>
+                                <li>Eagle, Protel - PCB projektovanje</li>
+                                <li>GIMP - obrada slika</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- row-3 -->
+            <div class="row row-4">
+                <div class="colon-1 trans-all trans-move-left-off trans-delay-3">
+                    <h4>Serverski programi </br>PHP and MySQL, Apache Server</h4>
+                </div>
+                <div class="colon-2 trans-all trans-move-off trans-delay-3">
+                    <h3><strong>phpMyadmin</strong> – aplikacija za rad sa mysql bazom podataka</h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>kreiranje nove baze</li>
+                                <li>kreiranje root korisnika, ostalih korisnika, dodela nivoa pristup</li>
+                                <li>kreiranje tabela</li>
+                                <li>definisanje polja tabela</li>
+                                <li>definisanje polja auto-increment</li>
+                                <li>selektovanje podataka, upotreba operatora OR, AND, BEETWIN, LIKE</li>
+                                <li>definisanje ograničenja za tabele, constrains</li>
+                                <li>definisanje primary key</li>
+                                <li>povezivanje tabela definisanjem foreign key-a</li>
+                                <li>izmena (UPDATE), brisanje podataka (DELETE), upis novih podataka (INSERT)
+                                    korišćenjem SQL query ili preko aplikacije phpMyadmin</li>
+                                <li>brisanje cele tabele ili baze naredbom DROP, i slično</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><strong>PHP</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>proceduralni php</li>
+                                <li>framework CodeIgniter</li>
+                                <li>objektnno-orjetisani php</li>
+                                <li>rad u CMS-u Wordpress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- row-4 -->
+            <div class="row row-5">
+                <div class="colon-1 trans-all trans-move-left-off trans-delay-4">
+                    <h4><strong>Front-end</strong> – web dizajn</h4>
+                </div>
+                <div class="colon-2 trans-all trans-move-off trans-delay-4">
+                    <h3><strong>HTML, CSS</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>korišćenje većine html elemenata za prikaz teksta, slika,
+                                    karaktera, linkova, paragrafa...</li>
+                                <li>korišćenje nekih od mnogobrojnih events trigger-a</li>
+                                <li>framework bootstrap</li>
+                                <li>framework w3school</li>
+                                <li>pomoćni alat SCSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3><strong>Javascript</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>implementacija primera jQuery-a sa manjim izmenama
+                                    prilagođenim potrebama projekta</li>
+                                <li>rad sa AJAX-om i primena u Wordpress-u</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- row-5 -->
+
+            <div class="row row-6">
+                <div class="colon-1 trans-all trans-move-left-off trans-delay-5">
+                    <h4><strong>CMS</strong></h4>
+                </div>
+                <div class="colon-2 trans-all trans-move-off trans-delay-5">
+                    <h3><strong>Wordpress</strong></h3>
+                    <div class="text-row">
+                        <div class="text-1"></div>
+                        <div class="text-2">
+                            <ul>
+                                <li>modifikacija postojećeg tema</li>
+                                <li>proširenje funkcionalnosti korišćenjem hooks-a i postojećih wordpress funkcija kao i
+                                    php funkcija</li>
+                                <li>jedan projekat plugin Post Private Messages</li>
+                                <li>nekoliko manjih projekata (dodatnih funkcija) za Wordpress
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- row-6 -->
+        </div>
+        <div id="projects" class="projects">
+            <h1 class="title w3-xxxlarge trans-all trans-move-left-off">Projekti</h1>
+            <div class="all-projects">
+                <div class="project pro-1 trans-all trans-move-left-off">
+                    <div class="frame">
+                        <div class="cover-p trans-all" onmouseover="hover_project(this)"
+                            onmouseleave="hover_project_leave(this)">
+                            <div class="trans-all">
+                                <h3>Pcela INFO</h3>Korišćene tehnologije: HTML, CSS, SCSS, w3schools framework,
+                                JavaScript, jQuery
+                            </div>
+                            <a href="https://petarb-wp.github.io/pcelar-info/" class="trans-all"
+                                target="_blank">Detaljnije</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project pro-2 trans-all trans-move-left-off trans-delay-1">
+                    <div class="frame">
+                        <div class="cover-p trans-all" onmouseover="hover_project(this)"
+                            onmouseleave="hover_project_leave(this)">
+                            <div class="trans-all">
+                                <h3>GromNET</h3>Korišćene tehnologije: HTML, CSS, w3schools framework, JavaScript,
+                                jQuery (No active links, Single Page)
+                            </div>
+                            <a href="https://petarb-wp.github.io/grom-net/" class="trans-all"
+                                target="_blank">Detaljnije</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project pro-3 trans-all trans-move-left-off trans-delay-2">
+                    <div class="frame">
+                        <div class="cover-p trans-all" onmouseover="hover_project(this)"
+                            onmouseleave="hover_project_leave(this)">
+                            <div class="trans-all">
+                                <h3>Post Private Messages</h3>Korišćene tehnologije: HTML, CSS, JavaScript, jQuery,
+                                Wordpress CMS, PHP, MySQL, Ajax
+                            </div>
+                            <a href="https://petarb-wp.github.io/private-messages-html/index.html" class="trans-all"
+                                target="_blank">Detaljnije</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project pro-4 trans-all trans-move-off trans-delay-3">
+                    <div class="frame">
+                        <div class="cover-p trans-all" onmouseover="hover_project(this)"
+                            onmouseleave="hover_project_leave(this)">
+                            <div class="trans-all">
+                                <h3>Skocko</h3>Korišćene tehnologije: HTML, CSS, JavaScript, PHP, Codeigniter framework,
+                                MySQL
+                            </div>
+                            <a href="http://skocko.ml/" class="trans-all" target="_blank">Detaljnije</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project pro-5 trans-all trans-move-off trans-delay-4">
+                    <div class="frame">
+                        <div class="cover-p trans-all" onmouseover="hover_project(this)"
+                            onmouseleave="hover_project_leave(this)">
+                            <div class="trans-all">
+                                <h3>About Me</h3>Korišćene tehnologije: HTML, CSS, SCSS, JavaScript, jQuery
+                            </div>
+                            <a href="https://petarb-wp.github.io/#" class="trans-all" target="_blank">Detaljnije</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="contact">
+            <h1 class="title w3-xxxlarge trans-all trans-move-left-off">Kontakt</h1>
+            <div class="info">
+                <div class="info-col1">
+                    <h3 class="trans-all trans-move-left-off">Kontakt podaci</h3>
+                    <div class="row">
+                        <div class="col-1 trans-all trans-move-left-off"><strong><i
+                                    class="far fa-envelope"></i></strong></div>
+                        <div class="col-2 trans-all trans-move-left-off trans-delay-1">petarbogic85@gmail.com</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 trans-all trans-move-left-off trans-delay-2"><strong><i
+                                    class="fas fa-phone-square"></i></strong></div>
+                        <div class="col-2 trans-all trans-move-left-off trans-delay-3">065/67-53-990</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 trans-all trans-move-left-off trans-delay-4"><strong><i
+                                    class="fab fa-skype"></i></strong>
+                        </div>
+                        <div class="col-2 trans-all trans-move-left-off trans-delay-5">petarb</div>
+                    </div>
+                </div>
+                <div class="info-col2">
+                    <h3 class="trans-all trans-move-off">Pošalji poruku</h3>
+                    <form method="POST" action="">
+                        <div class="textarea trans-all trans-move-off">
+                            <label for="message">Sadržaj poruke</label>
+                            <textarea name="message" id="message" placeholder="DISABLED" disabled></textarea>
+                        </div>
+                        <div class="email trans-all trans-move-off trans-delay-1">
+                            <label for="email">Vaš e-mail</label>
+                            <input type="email" name="email" id="email" placeholder="DISABLED" disabled>
+                        </div>
+                        <div class="button trans-all trans-move-off trans-delay-2">
+                            <button type="submit" disabled>Pošaji</button>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- info contact -->
+        </div><!-- contact -->
+    </div><!-- content -->
+
+    <script>
+        function allowed_links(selectedElement) {
+            let allowed_attr = ["about-me", "education", "projects", "contact"];
+            let check = false;
+            for (i = 0; i < allowed_attr.length; i++) {
+                if (selectedElement.getAttribute("data-name") == allowed_attr[i]) {
+                    check = true;
+                    break;
+                }
+            }
+            return check;
+        }
+
+        $(document).ready(function () {
+
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+
+                console.log("Click on: " + $(this).text());
+
+                if (!allowed_links(this)) {
+                    console.log("NOT ALLOWED");
+                    return "";
+                } else {
+                    console.log("ALLOWED");
+                }
+
+                if (sessionStorage.getItem("clickButton") == null) {
+                    sessionStorage.setItem("clickButton", true);
+                }
+
+                if (this.parentElement.getAttribute("id") == "sideBar") {
+                    console.log("selected Mobile Element: " + this);
+                    mobile_active(this, false); // selected-element, close side-bar menu
+                } else {
+                    console.log("selected Desktop Element: " + this);
+                    desktop_active(this); // selected-element
+                }
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+                    var selected_element = this;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html').animate({
+                        scrollTop: $(hash).offset().top - 77
+                    }, 1200, function () {
+
+                        // menu_marker(selected_element);
+                        setTimeout(function () {
+                            sessionStorage.removeItem("clickButton"); // clickButton == null
+                        }, 200);
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        // window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+
+        window.onload = function () {
+            $(document).ready(function () {
+
+                if (sessionStorage.getItem("clickButton") == null) {
+                    sessionStorage.setItem("clickButton", true);
+                }
+
+                $('html').animate({
+                    scrollTop: $("#aboutMe").offset().top - 77
+                }, 500, function () {
+                    let selectedElement = document.getElementById("navBar").children[0].children[0];
+                    if (window.innerWidth > 767) {
+                        desktop_active(selectedElement);
+                    } else {
+                        mobile_active(selectedElement, false, true); // selected Element, open side-bar menu, show all content parts
+                    }
+                    setTimeout(function () {
+                        sessionStorage.removeItem("clickButton"); // clickButton == null
+                    }, 200);
+                });
+            });
+
+            if (checkTouchDevice()) {
+                set_mobile_projects();
+            }
+        }
+    </script>
+</body>
+
+</html>
