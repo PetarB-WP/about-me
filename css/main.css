@@ -275,8 +275,8 @@ h1.title {
 .about-me .description h3.text-shadows {
   animation-name: textShadows;
   animation-duration: 500ms;
-  animation-iteration-count: 4;
-  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-delay: 2.5s;
   animation-direction: alternate;
 }
 .about-me .description ul {
