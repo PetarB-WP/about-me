@@ -1,3 +1,6 @@
+
+const dataName = ["about-me", "education", "projects", "contact"];
+
 function desktop_active(menuElement) {
 
     console.log("Desktop Active");
@@ -60,7 +63,7 @@ function mobile_active(menuElement, navbar_status) {
 
 function hide_all_except_one(exceptedElement) {
 
-    let dataName = ["about-me", "education", "projects", "contact"];
+    // let dataName = ["about-me", "education", "projects", "contact"];
     let animationElement;
 
     for (n = 0; n < dataName.length; n++) {
@@ -155,15 +158,15 @@ function clean_search_mobile() {
 }
 
 function hover_project(hoverElement, event) {
-    if (hoverElement.children[0].className.indexOf("move-up") == -1) {
-        hoverElement.children[0].className += " move-up";
-        hoverElement.children[1].className += " link-opacity";
+    if (hoverElement.children[0].className.indexOf("project-over") == -1) {
+        hoverElement.children[0].className += " project-over";
+        hoverElement.children[0].children[0].children[0].className += " hr-w-on";
     }
 }
 function hover_project_leave(hoverElement) {
-    if (hoverElement.children[0].className.indexOf("move-up") > -1) {
-        hoverElement.children[0].className = hoverElement.children[0].className.replace(" move-up", "");
-        hoverElement.children[1].className = hoverElement.children[1].className.replace(" link-opacity", "");
+    if (hoverElement.children[0].className.indexOf("project-over") > -1) {
+        hoverElement.children[0].className = hoverElement.children[0].className.replace(" project-over", "");
+        hoverElement.children[0].children[0].children[0].className = hoverElement.children[0].children[0].children[0].className.replace(" hr-w-on", "");
     }
 }
 
@@ -174,8 +177,8 @@ function set_mobile_projects() {
 
     for (i = 0; i < hoverElement.length; i++) {
         if (hoverElement[i].children[0].className.indexOf("move-up") == -1) {
-            hoverElement[i].children[0].className += " move-up";
-            hoverElement[i].children[1].className += " link-opacity";
+            hoverElement[i].children[0].className += " move-up link-opacity";
+            // hoverElement[i].children[1].className += " ";
         }
     }
 }
@@ -206,72 +209,6 @@ function navbar_show(status) {
             sideBar.className = sideBar.className.replace(" extend-sidebar", "");
         }
     }
-}
-
-// switch mobile to desktop or reverse
-// window.onresize = change_window_size();
-window.addEventListener("resize", change_window_size);
-
-function change_window_size() {
-
-    let selectedElement;
-    let parentElement;
-
-    if (sessionStorage.getItem("clickButton") == null) {
-        sessionStorage.setItem("clickButton", true);
-    }
-
-    if (window.innerWidth > 767) {
-        // resize to Desktop --> get active link from Side-Bar
-        parentElement = document.querySelector("#sideBar");
-        for (i = 0; i < parentElement.children.length; i++) {
-            if (parentElement.children[i].className.indexOf("select-sidebar") > -1) {
-                selectedElement = parentElement.children[i];
-                break;
-            }
-        }
-
-        // desktop menu marker
-        manu_selector(selectedElement);
-        clean_search_mobile(); // close search box if opened
-        navbar_show(false); // close navbar menu
-        console.log("rezise to DESKTOP: active link from SIDE BAR: " + selectedElement);
-
-    } else {
-        // resize to Side-Bar --> get active link from Desktop
-        parentElement = document.querySelector("#navBar .left-links");
-        for (i = 0; i < parentElement.children.length; i++) {
-            if (parentElement.children[i].getAttribute("data-select") == "selected") {
-                selectedElement = parentElement.children[i];
-                break;
-            }
-        }
-
-        sidebar_marker(selectedElement);
-        clean_search_desktop();
-        navbar_show(false);
-        console.log("rezise to SIDE BAR: active link from DESKTOP: " + selectedElement);
-    }
-    setTimeout(function () {
-
-        $('html').animate({
-            scrollTop: $(selectedElement.hash).offset().top - 77
-        }, 1200, function () {
-            if (window.innerWidth > 767) {
-                desktop_active(selectedElement);
-            } else {
-                mobile_active(selectedElement);
-            }
-
-            // hide_all_except_one(selectedElement); hide all content elements except selected
-
-            setTimeout(function () {
-                sessionStorage.removeItem("clickButton"); // clickButton == null
-            }, 500);
-        });
-
-    }, 1500);
-
 }
 
 var num = 1;

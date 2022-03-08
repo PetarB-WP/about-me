@@ -17,11 +17,13 @@
 -------------------------------------*/
 @use "sass:math";
 
-$color1: #D4F7D4;
-$color2: #559E54;
-$color3: #236AB9;
-$color4: #183BF0;
-$color5: #091034;
+$color1: #D4F7D4; // svetlo zeleno-plava (background)
+$color2: #559E54; // tamno zelena (links)
+$color3: #236AB9; // plava (search button close)
+$color4: #183BF0; // tamnija plava
+$color5: #091034; // najtamnija plava (Kontakt icons)
+$color6: #722c60; // tamno ljubicasto (education titles)
+$color7: #c022cb; // svetlo ljubicasto (education hr ) 
 
 $fontFamily: Verdana;
 $font-size: 16px;
@@ -95,6 +97,10 @@ h1.title{
 .trans-all{
   transition: all 1.2s;
 }
+.trans-all-6{
+  transition: all 0.6s;
+}
+
 .trans-move-off{
   transform: translateX(100%);
   opacity: 0;
@@ -117,20 +123,59 @@ h1.title{
   opacity: 1.0 !important;
 }
 
-.trans-delay-1{
-  transition-delay: 200ms;
+.trans-d1{
+	transition-delay: 100ms;
 }
-.trans-delay-2{
-  transition-delay: 400ms;
+.trans-d2{
+	transition-delay: 200ms;
 }
-.trans-delay-3{
-  transition-delay: 600ms;
+.trans-d3{
+	transition-delay: 300ms;
 }
-.trans-delay-4{
-  transition-delay: 800ms;
+.trans-d4{
+	transition-delay: 400ms;
 }
-.trans-delay-5{
-  transition-delay: 1000ms;
+.trans-d5{
+	transition-delay: 500ms;
+}
+.trans-d6{
+	transition-delay: 600ms;
+}
+.trans-d7{
+	transition-delay: 700ms;
+}
+.trans-d8{
+	transition-delay: 800ms;
+}
+.trans-d9{
+	transition-delay: 900ms;
+}
+.trans-d10{
+	transition-delay: 1000ms;
+}
+.trans-d12{
+	transition-delay: 1200ms;
+}
+.trans-d14{
+	transition-delay: 1400ms;
+}
+.trans-d16{
+	transition-delay: 1600ms;
+}
+.trans-d18{
+	transition-delay: 1800ms;
+}
+.trans-d20{
+	transition-delay: 2000ms;
+}
+.trans-d22{
+	transition-delay: 2200ms;
+}
+.trans-d24{
+	transition-delay: 2400ms;
+}
+.trans-d26{
+	transition-delay: 2600ms;
 }
 
 @import "navbar";

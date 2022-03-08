@@ -1,3 +1,9 @@
+// select content parts
+const aboutMe = document.getElementById("aboutMe");
+const projects = document.getElementById("projects");
+const education = document.getElementById("education");
+const contact = document.getElementById("contact");
+
 window.onscroll = function () {
     if (sessionStorage.getItem("clickButton") == null) {
         console.log("-------- Scroll --------");
@@ -6,11 +12,6 @@ window.onscroll = function () {
 }
 
 function scroll_response() {
-    // select content parts
-    let aboutMe = document.getElementById("aboutMe");
-    let projects = document.getElementById("projects");
-    let education = document.getElementById("education");
-    let contact = document.getElementById("contact");
     let top_aboutMe = aboutMe.getBoundingClientRect().top;
     let top_projects = projects.getBoundingClientRect().top;
     let top_education = education.getBoundingClientRect().top;
@@ -29,11 +30,11 @@ function scroll_response() {
     let top_offset = 77;
 
     // menu
-    let navBar = document.getElementById("navBar");
-    let selector_aboutMe = navBar.children[0].children[0];
-    let selector_education = navBar.children[0].children[1];
-    let selector_projects = navBar.children[0].children[2];
-    let selector_contact = navBar.children[0].children[3];
+    // navBAR declared in  index.html
+	let selector_aboutMe = navBAR.children[0].children[0];
+    let selector_education = navBAR.children[0].children[1];
+    let selector_projects = navBAR.children[0].children[2];
+    let selector_contact = navBAR.children[0].children[3];
 
     if (window_width > 767 || true) {
 
@@ -66,7 +67,7 @@ function scroll_response() {
         }
 
         // projects
-        if (((top_projects < window_height / 2) && (top_projects > top_offset)) ||
+        if (((top_projects < window_height * 2/3) && (top_projects > top_offset)) ||
             ((top_projects + height_projects < window_height * 2 / 3) && (top_projects + height_projects > window_height * 1 / 3))) {
             manipulation_projects(projects, "show");
         }
@@ -149,20 +150,20 @@ function manipulation_education(education, status) {
     if (education.getAttribute("id") == "education") {
         if (status == "show") {
             if (education.children[0].className.indexOf("trans-move-on") == -1) {
-
                 education.children[0].className += " trans-move-on";
                 for (i = 1; i < education.children.length; i++) {
                     education.children[i].children[0].className += " trans-move-on";
                     education.children[i].children[1].className += " trans-move-on";
+					education.children[i].children[0].children[0].className += " hr-w-on";
                 }
             }
         } else if (status == "hide") {
             if (education.children[0].className.indexOf("trans-move-on") > -1) {
-
                 education.children[0].className = education.children[0].className.replace(" trans-move-on", "");
                 for (i = 1; i < education.children.length; i++) {
                     education.children[i].children[0].className = education.children[i].children[0].className.replace(" trans-move-on", "");
                     education.children[i].children[1].className = education.children[i].children[1].className.replace(" trans-move-on", "");
+					education.children[i].children[0].children[0].className = education.children[i].children[0].children[0].className.replace(" hr-w-on", "");
                 }
             }
         }
@@ -200,8 +201,8 @@ function manipulation_contact(contact, status) {
 
     console.log("Attribute id: " + contact.getAttribute("id") + " status: " + status);
 
-    let row = document.querySelectorAll(".info-col1 .row");
-    let infoCol2 = document.querySelector(".info-col2");
+    const row = document.querySelectorAll(".info-col1 .row");
+    const infoCol2 = document.querySelector(".info-col2");
 
     if (contact.getAttribute("id") == "contact") {
         if (status == "show") {
@@ -247,10 +248,9 @@ function manu_selector(clickedElement) {
 
     console.log("Menu Selector");
 
-    // let elements = {};
-    let selectedElement;
     let desktopLinks = document.querySelectorAll("#navBar div.left-links a");
     let movingElement = document.getElementById("selector");
+    let selectedElement;
     let currentElementWidth;
     let currentElementLeftPosition;
     let parentElement;
@@ -306,11 +306,11 @@ function sidebar_marker(selectedElement) {
 
 function animation_element(selectedElement) { // return selected element (content)
 
-    let dataName = ["about-me", "education", "projects", "contact"];
+    // dataName = ["about-me", "education", "projects", "contact"];
     let content_id = ["aboutMe", "education", "projects", "contact"];
 
     // selectedElement can be <a> element with value of attribute data-name or only text string
-    for (i = 0; i < dataName.length; i++) {
+	for (i = 0; i < dataName.length; i++) {
 
         if (typeof (selectedElement) == "string") {
             if (dataName[i] == selectedElement) {
